@@ -1,4 +1,5 @@
-﻿//bool userIn = false;
+﻿bool result = false;
+int userIn = 0;
 
 string userAns;
         double tsp = 1;
@@ -18,12 +19,12 @@ double tbn = 0;
 begin:
 
 Console.WriteLine("Hey, how's it goin'? So ya' want some PB&J? How many people are we making PB&J sandwiches for?");
-        int userInput = int.Parse(Console.ReadLine());
-//userIn = int.TryParse(userInput, out int result);
+        string userInput = Console.ReadLine();
+result = int.TryParse(userInput, out userIn);
 
-jn = tsp * 4 * userInput;
-pn = tbsp * 2 * userInput;
-bn = slc * 2 * userInput;
+jn = tsp * 4 * userIn;
+pn = tbsp * 2 * userIn;
+bn = slc * 2 * userIn;
 tjn = jn / joj;
 tpn = pn / jop;
 tbn = bn / lob;
@@ -32,12 +33,12 @@ int ajn = (int)Math.Ceiling(tjn);
 int apn = (int)Math.Ceiling(tpn);
 int abn = (int)Math.Ceiling(tbn);
 
-/*if (userInput == null)
+if (result == false)
 {
 Console.WriteLine("C'mon, quit playin'.");
 Console.ReadLine();
 }
-else*/
+else
 {
     Console.WriteLine("Okay, you're gonna' need " + jn + " teaspoon(s) of jelly, " + pn + " tablespoon(s) of peanut butter, and " +
         bn + " slice(s) of bread.");
